@@ -1,369 +1,290 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shane.dev - my personal portfolio">
-  <title>Shane.dev | Student Developer</title>
+
+  <meta name="description" content="Shane.dev - My personal portfolio as a BSIT student.">
+
+  <title>Shane.dev | Portfolio</title>
+
   <style>
-    :root {
-      --bg: #0b0f0d;
-      --panel: #121915;
-      --text: #f2f7f3;
-      --muted: #a5b3a9;
-      --accent: #a6f36b;
-      --border: #29352d;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    body.light {
-      --bg: #f5f8f4;
-      --panel: #ffffff;
-      --text: #172019;
-      --muted: #58665c;
-      --accent: #387b20;
-      --border: #dce5dc;
+    html {
+      scroll-behavior: smooth;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
+      background: #ffffff;
+      color: #202124;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      transition: background .2s, color .2s;
+      line-height: 1.7;
     }
-
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(100% - 36px, 1000px); margin: auto; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav {
-      min-height: 68px;
+      width: 100%;
+      padding: 18px 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      background: #ffffff;
+      border-bottom: 1px solid #eeeeee;
     }
 
-    .logo { font-weight: 800; font-size: 1.3rem; }
-    .logo span, .accent { color: var(--accent); }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #16864a;
+      text-decoration: none;
+    }
 
-    .navlinks {
+    nav {
       display: flex;
-      gap: 16px;
-      font-size: .9rem;
-      color: var(--muted);
+      gap: 22px;
     }
 
-    .navlinks a:hover { color: var(--accent); }
-
-    button, .button {
-      border: 1px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 15px;
-      font: inherit;
-      cursor: pointer;
+    nav a {
+      text-decoration: none;
+      color: #444444;
+      font-size: 14px;
     }
 
-    button:hover, .button:hover { border-color: var(--accent); }
+    nav a:hover {
+      color: #16864a;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 45px 24px 70px;
+    }
 
     .hero {
-      padding: 80px 0 65px;
-      display: grid;
-      grid-template-columns: 1.4fr .8fr;
-      gap: 40px;
-      align-items: center;
+      padding: 35px 0 50px;
     }
 
-    .eyebrow {
-      color: var(--accent);
-      font-size: .82rem;
-      font-weight: bold;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 12px 0;
-      font-size: clamp(2.7rem, 8vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -.05em;
-    }
-
-    h2 { font-size: 2rem; margin-bottom: 16px; }
-    h3 { margin-bottom: 8px; }
-    p { color: var(--muted); }
-    .hero p { font-size: 1.08rem; }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: #10200b;
-      border-color: var(--accent);
-      font-weight: bold;
-    }
-
-    .profile-card {
-      min-height: 260px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: var(--panel);
-      display: grid;
-      place-items: center;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      display: grid;
-      place-items: center;
+    .profile-picture {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      object-position: center 40%;
       border-radius: 50%;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      font-size: 2.7rem;
-      font-weight: bold;
-      background: var(--bg);
-      margin: 0 auto 16px;
-    }
-
-    section { padding: 38px 0; scroll-margin-top: 85px; }
-    .section-intro { max-width: 650px; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-    }
-
-    .number {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: .85rem;
+      border: 4px solid #16864a;
+      display: block;
+      margin-bottom: 28px;
     }
 
     .tag {
-      display: inline-block;
-      margin: 8px 5px 0 0;
-      padding: 5px 9px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: .8rem;
+      color: #16864a;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
     }
 
-    .contact {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 28px;
+    h1 {
+      font-size: clamp(38px, 8vw, 64px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 19px;
+      margin: 5px 0;
+    }
+
+    .intro {
+      max-width: 600px;
+      font-size: 17px;
+    }
+
+    .muted {
+      color: #686868;
+    }
+
+    section {
+      padding-top: 35px;
+      scroll-margin-top: 25px;
+    }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #e9e9e9;
+      border-radius: 14px;
+      padding: 23px;
+      margin-bottom: 15px;
+    }
+
+    .number {
+      color: #16864a;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .contact-link {
+      color: #16864a;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card p {
+      margin: 8px 0;
     }
 
     footer {
-      margin-top: 40px;
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-      color: var(--muted);
-      font-size: .9rem;
+      border-top: 1px solid #eeeeee;
+      text-align: center;
+      color: #686868;
+      padding: 25px 15px;
+      font-size: 14px;
     }
 
-    @media (max-width: 700px) {
-      .hero { grid-template-columns: 1fr; padding-top: 50px; }
-      .grid { grid-template-columns: 1fr; }
-      nav { flex-wrap: wrap; padding: 12px 0; }
-      .navlinks { gap: 12px; font-size: .82rem; flex-wrap: wrap; }
+    @media (max-width: 500px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      main {
+        padding: 30px 20px 50px;
+      }
+
+      .profile-picture {
+        width: 145px;
+        height: 145px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <nav class="wrap">
-      <a class="logo" href="#home">Shane<span>.dev</span></a>
-      <div class="navlinks">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button id="themeToggle" type="button">☀️ / 🌙</button>
+    <a href="#" class="logo">Shane.dev</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main class="wrap">
-    <section class="hero" id="home">
-      <div>
-        <div class="eyebrow">Hello, world!</div>
-        <h1>Hi, I'm Shane<span class="accent">.</span></h1>
-        <h3>BSIT Student · Beginner Developer</h3>
-        <p>
-          I'm learning how to turn ideas into real projects through code.
-          This is my little corner of the internet where I share my journey
-          and progress.
-        </p>
-        <div class="actions">
-          <a class="button primary" href="#projects">Explore My Projects ↗</a>
-          <a class="button" href="#about">About Me</a>
-        </div>
-      </div>
+  <main>
 
-      <aside class="profile-card">
-        <div>
-          <div class="avatar">S</div>
-          <h3>Shane.dev</h3>
-          <p>Learning one line at a time.</p>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        </div>
-      </aside>
+    <section class="hero">
+      <img
+        src="./1000357308.jpg"
+        alt="My profile photo"
+        class="profile-picture"
+      >
+
+      <p class="tag">BSIT STUDENT · BEGINNER DEVELOPER</p>
+
+      <h1>Hello, I'm Shane.</h1>
+
+      <p class="intro muted">
+        Welcome to my personal portfolio! I'm a first-year
+        Bachelor of Science in Information Technology student
+        learning programming and web development.
+      </p>
     </section>
 
     <section id="about">
-      <div class="eyebrow">A little about me</div>
-      <h2>Curious mind. <span class="accent">Building things.</span></h2>
-      <p class="section-intro">
-        I'm a first-year BSIT student exploring programming, web development,
-        and the creative side of technology. I'm still learning, and this
-        portfolio will grow as I do.
-      </p>
-    </section>
+      <h2>About Me</h2>
 
-    <section id="experience">
-      <div class="eyebrow">My journey</div>
-      <h2>Experience & Milestones</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="number">01 / FIRST CODE</div>
-          <h3>Hello, World!</h3>
-          <p>Wrote my first simple program and started learning how code works.</p>
-        </article>
-        <article class="card">
-          <div class="number">02 / FIRST GAME</div>
-          <h3>My First Game</h3>
-          <p>Created a small game project called "Russian Roulette" as a coding experiment.</p>
-        </article>
-        <article class="card">
-          <div class="number">03 / FIRST WEBSITE</div>
-          <h3>Built for the Web</h3>
-          <p>Started making websites and learning HTML, CSS, and JavaScript.</p>
-        </article>
+      <div class="card">
+        <p>
+          I'm a beginner developer interested in technology,
+          programming, and creating websites. I'm continuing
+          to learn new skills and improve through my projects
+          and college experience.
+        </p>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="eyebrow">Things I've worked on</div>
-      <h2>My Projects</h2>
-      <p class="section-intro">
-        Here are some starting points for my portfolio. I'll add more projects
-        as I continue learning and creating.
-      </p>
-      <div class="grid">
-        <article class="card">
-          <div class="number">PROJECT 01</div>
-          <h3>First Website</h3>
-          <p>A beginner website made while learning web development.</p>
-          <span class="tag">HTML</span><span class="tag">CSS</span>
-        </article>
-        <article class="card">
-          <div class="number">PROJECT 02</div>
-          <h3>Hello World</h3>
-          <p>My first program and the start of my programming journey.</p>
-          <span class="tag">Programming</span>
-        </article>
-        <article class="card">
-          <div class="number">PROJECT 03</div>
-          <h3>More Coming Soon</h3>
-          <p>I'll add new school and personal projects here as I learn.</p>
-          <span class="tag">In progress</span>
-        </article>
+    <section id="experience">
+      <h2>My Experience</h2>
+
+      <div class="card">
+        <span class="number">01 / FIRST PROGRAM</span>
+        <h3>Hello World</h3>
+        <p class="muted">
+          Made my first code: "Hello World".
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="number">02 / FIRST GAME</span>
+        <h3>Russian Roulette</h3>
+        <p class="muted">
+          Made my first game project.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="number">03 / FIRST WEBSITE</span>
+        <h3>My First Website</h3>
+        <p class="muted">
+          Created my first website and started building
+          my personal portfolio.
+        </p>
       </div>
     </section>
 
     <section id="contact">
-      <div class="contact">
-        <div class="eyebrow">Say hello</div>
-        <h2>Let's Connect.</h2>
+      <h2>Personal Information</h2>
+
+      <div class="card contact-card">
         <p>
-          Want to talk about technology, projects, or learning to code?
-          You can contact me using the details below.
+          <strong>Email:</strong>
+          <a
+            class="contact-link"
+            href="mailto:Allenlregulacion@gmail.com"
+          >Allenlregulacion@gmail.com</a>
         </p>
-        <p><strong>Email:</strong>
-          <a class="accent" href="mailto:your-email@example.com">your-email@example.com</a>
+
+        <p>
+          <strong>Contact no.:</strong>
+          <a
+            class="contact-link"
+            href="tel:09939695227"
+          >09939695227</a>
         </p>
-        <p><strong>GitHub:</strong>
-          <a class="accent" href="https://github.com/">Visit GitHub ↗</a>
-        </p>
-        <p>Remember to replace these placeholder links with your own details.</p>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <div class="wrap">
-      © <span id="year"></span> Shane.dev · Made while learning, one step at a time.
-    </div>
+    © 2026 Shane.dev · Learning, building, improving.
   </footer>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-
-    toggle.addEventListener('click', function () {
-      document.body.classList.toggle('light');
-   
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-     
-<script>
-  const themeToggle = document.getElementById("theme-toggle");
-
-  function setTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-
-    if (themeToggle) {
-      themeToggle.textContent =
-        theme === "dark" ? "☀️" : "🌙";
-    }
-  }
-
-  const savedTheme = localStorage.getItem("theme") || "light";
-  setTheme(savedTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const currentTheme =
-        document.documentElement.getAttribute("data-theme");
-
-      setTheme(currentTheme === "dark" ? "light" : "dark");
-    });
-  }
-</script>
 </body>
 </html>
