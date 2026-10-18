@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Shane's personal portfolio. First-year BSIT student and beginner developer.">
-
-  <title>Shane.dev | Personal Portfolio</title>
+  <meta name="description" content="Shane's personal portfolio as a BSIT student and beginner developer.">
+  <title>Shane.dev | Portfolio</title>
 
   <style>
     :root {
@@ -28,14 +27,14 @@
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-padding-top: 110px;
     }
 
     body {
@@ -43,6 +42,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      font-size: 16px;
       transition: background 0.25s, color 0.25s;
     }
 
@@ -60,241 +60,254 @@
     }
 
     nav {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
-      padding: 20px 25px;
+      padding: 12px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 15px;
     }
 
     .logo {
       color: var(--green);
-      font-size: 2rem;
+      font-size: 1.65rem;
       font-weight: 800;
     }
 
     .nav-links {
       display: flex;
+      gap: 16px;
       flex-wrap: wrap;
-      gap: 22px;
     }
 
     .nav-links a {
       color: var(--text);
-      font-size: 1.05rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
+      font-size: 0.95rem;
     }
 
     .theme-row {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
-      padding: 0 25px 20px;
+      padding: 0 20px 12px;
     }
 
     .theme-button {
-      padding: 11px 18px;
-      border-radius: 30px;
+      padding: 7px 13px;
       border: 1px solid var(--border);
+      border-radius: 25px;
       background: var(--card);
       color: var(--text);
-      font-size: 1rem;
+      font-size: 0.9rem;
       cursor: pointer;
     }
 
     main {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
-      padding: 45px 25px;
+      padding: 25px 20px;
     }
 
     section {
-      margin-bottom: 75px;
+      margin-bottom: 48px;
     }
 
     /* PROFILE */
 
     .hero {
-      padding: 75px 0 95px;
+      padding: 38px 0 45px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 32px;
+      gap: 20px;
     }
 
     .profile-picture {
-      width: 280px;
-      height: 280px;
-      max-width: 100%;
+      width: 165px;
+      height: 165px;
       object-fit: cover;
       object-position: center;
       border-radius: 50%;
-      border: 7px solid var(--green);
+      border: 5px solid var(--green);
       display: block;
-      margin-bottom: 15px;
     }
 
     .profile-label {
       color: var(--green);
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 800;
-      letter-spacing: 3px;
-      margin-bottom: 25px;
+      letter-spacing: 1.8px;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
-      font-size: clamp(2.7rem, 7vw, 4.5rem);
+      font-size: clamp(2rem, 6vw, 3.2rem);
       line-height: 1.2;
-      letter-spacing: -1.5px;
-      margin-bottom: 35px;
+      margin-bottom: 20px;
     }
 
     .description {
       color: var(--muted);
-      font-size: 1.35rem;
-      line-height: 2;
-      max-width: 800px;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      max-width: 680px;
     }
 
-    /* HEADINGS AND CARDS */
+    /* SECTIONS AND CARDS */
 
     h2 {
-      font-size: 2.3rem;
-      margin-bottom: 25px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 28px;
-      margin-bottom: 22px;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 16px;
     }
 
     .number {
       color: var(--green);
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
     }
 
     .card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
 
     .card p {
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
-    /* PROJECTS */
+    /* PROJECT IMAGE */
 
     .project-image {
       display: block;
       width: 100%;
-      max-width: 260px;
-      max-height: 180px;
+      max-width: 190px;
+      max-height: 150px;
       object-fit: contain;
       object-position: left center;
+      border-radius: 10px;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      margin: 18px 0;
+      margin: 12px 0;
     }
 
     .project-date {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
-    /* CONTACT */
 
     .contact-list {
       list-style: none;
     }
 
     .contact-list li {
-      margin: 14px 0;
+      margin: 10px 0;
       overflow-wrap: anywhere;
-      font-size: 1.05rem;
     }
 
     footer {
       text-align: center;
+      padding: 22px 15px;
       color: var(--muted);
-      padding: 30px 20px;
       border-top: 1px solid var(--border);
+      font-size: 0.9rem;
     }
 
-    /* MOBILE */
+    /* SCROLL REVEAL */
 
-    @media (max-width: 650px) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    body.js-ready .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+    }
+
+    body.js-ready .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
       nav {
-        justify-content: center;
-        padding: 18px 20px;
+        padding: 12px 16px;
       }
 
       .logo {
-        width: 100%;
-        text-align: left;
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
+        gap: 12px;
       }
 
       .nav-links a {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
       }
 
       .theme-row {
-        padding: 0 20px 18px;
+        padding: 0 16px 12px;
       }
 
       main {
-        padding: 30px 25px;
+        padding: 20px 20px;
       }
 
       .hero {
-        padding-top: 70px;
-        padding-bottom: 95px;
-        gap: 30px;
+        padding-top: 35px;
+        padding-bottom: 40px;
+        gap: 20px;
       }
 
       .profile-picture {
-        width: 280px;
-        height: 280px;
+        width: 155px;
+        height: 155px;
       }
 
       .profile-label {
-        font-size: 0.95rem;
-        letter-spacing: 2px;
-        line-height: 1.8;
+        font-size: 0.8rem;
+        letter-spacing: 1.4px;
       }
 
       .hero h1 {
-        font-size: 3.3rem;
+        font-size: 2.5rem;
       }
 
       .description {
-        font-size: 1.2rem;
-        line-height: 2;
+        font-size: 1rem;
       }
 
       h2 {
-        font-size: 2.2rem;
+        font-size: 1.65rem;
       }
 
       .card {
-        padding: 24px;
+        padding: 19px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      body.js-ready .reveal {
+        transition: none;
+        transform: none;
       }
     }
   </style>
@@ -302,13 +315,12 @@
 
 <body>
 
-  <!-- NAVIGATION -->
   <header>
     <nav>
       <a href="#home" class="logo">Shane.dev</a>
 
       <div class="nav-links">
-        <a href="#about-me">About</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -316,11 +328,7 @@
     </nav>
 
     <div class="theme-row">
-      <button
-        type="button"
-        class="theme-button"
-        id="themeToggle"
-      >
+      <button id="themeToggle" class="theme-button" type="button">
         🌙 Dark Mode
       </button>
     </div>
@@ -329,7 +337,7 @@
   <main>
 
     <!-- PROFILE -->
-    <section id="home" class="hero">
+    <section id="home" class="hero reveal">
 
       <img
         src="./IMG_20261013_163103_200.jpg"
@@ -338,7 +346,6 @@
       >
 
       <div class="hero-content">
-
         <p class="profile-label">
           BSIT STUDENT · BEGINNER DEVELOPER
         </p>
@@ -350,56 +357,52 @@
           Bachelor of Science in Information Technology student
           learning programming and web development.
         </p>
-
       </div>
     </section>
 
     <!-- ABOUT ME -->
-    <section id="about-me">
+    <section id="about" class="reveal">
       <h2>About Me</h2>
 
       <div class="card">
         <p>
-          I'm a first-year BSIT student who is learning
-          programming, web development, and other areas
-          of Information Technology. I enjoy discovering
-          new things, building projects, and improving
-          my skills one step at a time.
+          I'm a first-year BSIT student who enjoys learning
+          programming, creating websites, and exploring new
+          technologies. I'm continuously developing my skills
+          and building projects as I learn.
         </p>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience">
+    <section id="experience" class="reveal">
       <h2>My Experience</h2>
 
-      <article class="card">
+      <article class="card reveal">
         <div class="number">01 / FIRST PROGRAM</div>
         <h3>Hello World</h3>
         <p>Made my first code: "Hello World".</p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <div class="number">02 / FIRST GAME</div>
         <h3>Russian Roulette</h3>
         <p>Made my first game project.</p>
       </article>
 
-      <article class="card">
+      <article class="card reveal">
         <div class="number">03 / FIRST WEBSITE</div>
         <h3>My First Website</h3>
-        <p>Made my first website and started learning
-          how websites work.</p>
+        <p>Made my first website and started learning web development.</p>
       </article>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
+    <section id="projects" class="reveal">
       <h2>My Projects</h2>
 
-      <article class="card">
+      <article class="card reveal">
         <div class="number">01 / UNESCO HACKATHON</div>
-
         <h3>SurQuest</h3>
 
         <p class="project-date">
@@ -414,14 +417,14 @@
         >
 
         <p>
-          Made an application called SurQuest with my
-          group for UNESCO Hackathons.
+          Made an application called SurQuest with my group
+          for UNESCO Hackathons.
         </p>
       </article>
     </section>
 
     <!-- PERSONAL INFORMATION -->
-    <section id="contact">
+    <section id="contact" class="reveal">
       <h2>Personal Information</h2>
 
       <div class="card">
@@ -451,31 +454,28 @@
     <p>© 2026 Shane.dev | Personal Portfolio</p>
   </footer>
 
-  <!-- LIGHT AND DARK MODE -->
   <script>
+    // LIGHT AND DARK MODE
     const themeToggle = document.getElementById("themeToggle");
 
     function updateThemeButton() {
-      if (document.body.classList.contains("dark")) {
-        themeToggle.textContent = "☀️ Light Mode";
-      } else {
-        themeToggle.textContent = "🌙 Dark Mode";
-      }
+      themeToggle.textContent =
+        document.body.classList.contains("dark")
+          ? "☀️ Light Mode"
+          : "🌙 Dark Mode";
     }
 
     themeToggle.addEventListener("click", function () {
       document.body.classList.toggle("dark");
 
-      const currentTheme =
-        document.body.classList.contains("dark")
-          ? "dark"
-          : "light";
-
       try {
-        localStorage.setItem("shane-theme", currentTheme);
-      } catch (error) {
-        // Theme switching still works without saved preferences.
-      }
+        localStorage.setItem(
+          "shane-theme",
+          document.body.classList.contains("dark")
+            ? "dark"
+            : "light"
+        );
+      } catch (error) {}
 
       updateThemeButton();
     });
@@ -484,11 +484,37 @@
       if (localStorage.getItem("shane-theme") === "dark") {
         document.body.classList.add("dark");
       }
-    } catch (error) {
-      // Light mode is the default.
-    }
+    } catch (error) {}
 
     updateThemeButton();
+
+    // SCROLL DOWN: SHOW
+    // SCROLL UP: HIDE AGAIN WHEN THE ELEMENT LEAVES VIEW
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      document.body.classList.add("js-ready");
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            } else {
+              entry.target.classList.remove("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -25px 0px"
+        }
+      );
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+    }
   </script>
 
 </body>
